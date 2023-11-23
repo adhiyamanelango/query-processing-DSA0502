@@ -1,0 +1,20 @@
+import pandas as pd
+
+# Sample data
+data = {'EMPLOYEE_ID': [101, 102, 103, 104, 105, 106, 107, 108, 109, 110],
+        'EMPLOYEE_NAME': ['Alice', 'Bob', 'Charlie', 'David', 'Emma', 'Frank', 'Grace', 'Hank', 'Ivy', 'Jack'],
+        'JOB_ID': ['J001', 'J002', 'J001', 'J003', 'J002', 'J004', 'J001', 'J005', 'J002', 'J006'],
+        'SALARY': [50000, 60000, 55000, 70000, 65000, 75000, 52000, 80000, 60000, 90000],
+        'HIRE_DATE': ['2022-01-01', '2022-02-01', '2022-03-01', '2022-04-01', '2022-05-01', '2022-06-01', '2022-07-01', '2022-08-01', '2022-09-01', '2022-10-01']}
+
+df = pd.DataFrame(data)
+
+# Count the number of jobs for each employee
+job_counts = df.groupby('EMPLOYEE_ID')['JOB_ID'].nunique()
+
+# Select employees who have held two or more jobs
+employees_with_multiple_jobs = job_counts[job_counts >= 2].index
+
+# Display the result
+print("Employees who have held two or more jobs:")
+print(df[df['EMPLOYEE_ID'].isin(employees_with_multiple_jobs)][['EMPLOYEE_ID', 'EMPLOYEE_NAME']])

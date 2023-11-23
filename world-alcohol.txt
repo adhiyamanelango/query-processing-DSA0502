@@ -1,0 +1,23 @@
+import pandas as pd
+
+# Load the World alcohol consumption dataset (replace 'file_path' with your dataset path or URL)
+# For example, if your file is 'data.csv' in the same directory, you can use pd.read_csv('data.csv')
+# df = pd.read_csv('data.csv')
+
+# For demonstration purposes, let's create a sample DataFrame
+data = {
+    'Country': ['USA', 'Canada', 'Germany', 'France'],
+    'BeerServings': [200, 190, 300, 150],
+    'WineServings': [100, 120, 90, 95],
+    'SpiritServings': [220, 150, 170, 180]
+}
+
+df = pd.DataFrame(data)
+
+# Display dimensions or shape of the DataFrame
+print("Dimensions of the DataFrame:", df.shape)
+
+# Extract column names from the DataFrame
+column_names = df.columns.tolist()
+print("\nColumn names in the DataFrame:")
+print(column_names)

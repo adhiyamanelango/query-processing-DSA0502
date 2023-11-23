@@ -1,0 +1,22 @@
+import pandas as pd
+
+# Creating a sample DataFrame with job details
+data = {
+    'Job Title': ['Software Engineer', 'Data Scientist', 'Product Manager', 'UI/UX Designer', 'Sales Representative'],
+    'Company': ['TechCo', 'DataCorp', 'ProductX', 'DesignHub', 'SalesForce'],
+    'Salary': [100000, 95000, 120000, 90000, 80000],
+    'Location': ['CityA', 'CityB', 'CityC', 'CityD', 'CityE']
+}
+
+jobs_df = pd.DataFrame(data)
+
+# Displaying the original DataFrame
+print("Original DataFrame:")
+print(jobs_df)
+
+# Sorting the DataFrame in descending order based on the 'Job Title'
+sorted_jobs_df = jobs_df.sort_values(by='Job Title', ascending=False)
+
+# Displaying the sorted DataFrame
+print("\nDataFrame sorted by Job Title in descending order:")
+print(sorted_jobs_df)

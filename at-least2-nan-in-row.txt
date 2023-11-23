@@ -1,0 +1,18 @@
+import pandas as pd
+
+# Sample DataFrame with NaN values
+data = {'Column1': [1, 2, None, 4, None],
+        'Column2': [6, None, 8, 9, 10],
+        'Column3': [None, 'B', 'C', None, 'E']}
+
+df = pd.DataFrame(data)
+
+# Keep rows with at least 2 NaN values
+min_nan_values = 2
+df_at_least_2_nan = df.dropna(thresh=len(df.columns) - min_nan_values + 1)
+
+# Display the original and modified DataFrame
+print("Original DataFrame:")
+print(df)
+print("\nDataFrame with at least 2 NaN values:")
+print(df_at_least_2_nan)

@@ -1,0 +1,25 @@
+import pandas as pd
+import numpy as np
+
+# Create a DataFrame with random values
+np.random.seed(42)  # for reproducibility
+data = np.random.rand(10, 4)
+df = pd.DataFrame(data, columns=['A', 'B', 'C', 'D'])
+
+# Introduce some NaN values
+df.iloc[2, 1] = np.nan
+df.iloc[5, 3] = np.nan
+df.iloc[8, 2] = np.nan
+
+# Function to highlight NaN values
+def highlight_nan(val):
+    if pd.isna(val):
+        return 'background-color: yellow'
+    else:
+        return ''
+
+# Apply the style function to the DataFrame
+styled_df = df.style.applymap(highlight_nan)
+
+# Display the styled DataFrame
+styled_df

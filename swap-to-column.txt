@@ -1,0 +1,17 @@
+import pandas as pd
+
+# Sample DataFrame
+data = {'Name': ['John', 'Jane', 'Bob', 'Alice'],
+        'Age': [25, 30, 22, 28]}
+
+df = pd.DataFrame(data)
+
+# Specify the character column to swap cases
+column_to_swap = 'Name'
+
+# Swap the cases of the specified column
+df[column_to_swap] = df[column_to_swap].str.swapcase()
+
+# Display the DataFrame after swapping cases
+print("DataFrame after swapping cases:")
+print(df)

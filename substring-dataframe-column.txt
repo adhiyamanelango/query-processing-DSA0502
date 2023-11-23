@@ -1,0 +1,16 @@
+import pandas as pd
+
+# Sample DataFrame
+data = {'Text': ['apple', 'banana', 'orange', 'grape', 'kiwi']}
+
+df = pd.DataFrame(data)
+
+# Input substring to find
+substring = 'an'
+
+# Find the index of the substring in the 'Text' column
+indexes_with_substring = df[df['Text'].str.contains(substring)].index.tolist()
+
+# Display indexes with the given substring
+print(f"Indexes with the substring '{substring}':")
+print(indexes_with_substring)

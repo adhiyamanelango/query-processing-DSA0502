@@ -1,0 +1,20 @@
+import pandas as pd
+
+# Sample DataFrame with missing values
+data = {'Column1': [1, 2, None, 4, 5],
+        'Column2': [6, None, 8, 9, 10],
+        'Column3': ['A', 'B', 'C', None, 'E']}
+
+df = pd.DataFrame(data)
+
+# Your own input to replace missing values
+replacement_value = 'X'
+
+# Replace missing values with your own input
+df_filled = df.fillna(replacement_value)
+
+# Display the original and modified DataFrame
+print("Original DataFrame:")
+print(df)
+print("\nDataFrame after replacing missing values:")
+print(df_filled)
